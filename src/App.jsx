@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
+import GameEmbed from "./components/GameEmbed";
+import Tips from "./components/Tips";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
+    <div className="min-h-screen bg-gradient-to-b from-[#0b0b12] via-[#0b0b12] to-[#121225] text-white">
+      <Navbar />
+
+      <section className="mx-auto mt-8 w-full max-w-6xl px-4 text-center">
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          Play Granny Game Instantly
         </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
+        <p className="mt-2 text-white/70">
+          Embedded right here for quick access. Click inside the frame to focus, then press play.
         </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+      </section>
+
+      <GameEmbed />
+      <Tips />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
